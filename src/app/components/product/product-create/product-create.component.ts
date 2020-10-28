@@ -23,8 +23,8 @@ export class ProductCreateComponent implements OnInit {
 
     this.productForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      price: new FormControl('', [Validators.required]),
-    });    
+      price: new FormControl('', [Validators.required, Validators.pattern("/^[0-9]+(\.[0-9]{1,2})?$/")]
+    )});    
     
   }
 
