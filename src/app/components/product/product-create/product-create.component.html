@@ -1,23 +1,30 @@
 <mat-card>
     <mat-card-title>Novo Produto</mat-card-title>
-    <form>
+    <form [formGroup]="productForm" novalidate (ngSubmit)="createFormProductValidate(productForm.value)" fxLayout="column wrap">
+        
         <mat-form-field>
-            <input matInput placeholder="Nome"
-                [(ngModel)]="product.name" name="name">
+            <input matInput placeholder="Nome"  formControlName="name"  >
+            <mat-error *ngIf="hasError('name', 'required')">Insira um Nome!</mat-error>
         </mat-form-field>
+        
         <mat-form-field>
-            <input matInput placeholder="Preço (R$)"
-                [(ngModel)]="product.price" name="price">
-        </mat-form-field>
+            <input matInput placeholder="Preço (R$)" formControlName="price" >
+            <mat-error *ngIf="hasError('name', 'required')">Insira um Valor!</mat-error>
+        </mat-form-field>   
+        
+        <mat-card-footer>
+            <button  mat-raised-button color="primary" [disabled]="!productForm.valid">
+            Salvar
+            </button>
+        
+            <button  mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+        </mat-card-footer>
+
     </form>
-    <button mat-raised-button (click)="createProduct()" color="primary">
-        Salvar
-    </button>
-    
-    <button mat-raised-button (click)="cancel()">
-        Cancelar
-    </button>
 </mat-card>
+
 
 
 

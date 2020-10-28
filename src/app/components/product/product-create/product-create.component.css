@@ -4,6 +4,15 @@ form {
     margin-top: 20px;
 }
 
-button {
-    margin: 20px 15px 0px 0px;
+button { 
+    width: 150px;  
+    margin: 40px 10px 15px 15px;
+}
+
+mat-form-field{
+    margin-top: 20px;
+    width: inherit;
+}
+mat-card-title{
+    text-align: center;
 }

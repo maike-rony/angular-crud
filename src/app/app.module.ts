@@ -34,6 +34,7 @@ import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData (localePt);
 
@@ -67,7 +68,8 @@ registerLocaleData (localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LOCALE_ID,
